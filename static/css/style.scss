@@ -1,0 +1,48 @@
+p, h1, h2, h3, h4, label, input .btn, body {
+	font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a {
+	color: rgb(30, 114, 186);
+}
+
+.btn-block, .btn-block:focus {
+    color: rgb(255, 255, 255);
+    background-color: rgba(30, 114, 186, 1);
+    outline: none;
+    border: none;
+}
+
+.btn-block:hover {
+    background-color: rgba(30, 114, 186, .9);
+    color: rgb(255, 255, 255);
+    border: none;
+}
+
+.btn-block:active {
+    color: rgb(255, 255, 255);
+    background-color: rgba(30, 114, 186, .8);
+    border: none;
+}
+
+body, html, .container {
+    height: 100%;
+}
+
+.vertically-centered {
+    margin-top: 15%;
+}
+
+.horizontally-centered {
+    text-align: center;
+}
+
+.start-hidden {
+    display: none;
+}
+
+iframe {
+    width: 75%;
+    height: 40em;
+    margin: auto;
+}
