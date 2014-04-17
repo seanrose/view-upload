@@ -1,4 +1,4 @@
-/* global $, console, analytics */
+/* global $, console */
 
 /* Button Click Event */
 
@@ -68,16 +68,10 @@ $('#desktop-upload-form').submit(function () {
         error: function (data) {
             console.log(data);
             showError();
-            analytics.track('Desktop Conversion', {
-                success: 'false'
-            });
         }
     }).done(function (data) {
         console.log('Document ID is: ' + data.id);
         fetchSession(data.id, shouldExpire);
-        analytics.track('Desktop Conversion', {
-            success: 'true'
-        });
     });
 
     return false;
@@ -101,16 +95,10 @@ $('#url-upload-form').submit(function () {
         error: function (data) {
             console.log(data);
             showError();
-            analytics.track('URL Conversion', {
-                success: 'false'
-            });
         }
     }).done(function (data) {
         console.log('Document ID is: ' + data.id);
         fetchSession(data.id, shouldExpire);
-        analytics.track('URL Conversion', {
-            success: 'true'
-        });
     });
 
     return false;
