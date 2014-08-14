@@ -91,7 +91,7 @@ def webhook_success():
 
 
 @app.route('/test-webhook', methods=['POST', 'GET'])
-def webhook_success():
+def test_webhook_success():
 
     print '##### BEGIN TEST ####\n'
     print request.data
