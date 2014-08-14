@@ -90,6 +90,15 @@ def webhook_success():
     return "OK"
 
 
+@app.route('/test-webhook', methods=['POST', 'GET'])
+def webhook_success():
+
+    print '##### BEGIN TEST ####\n'
+    print request.data
+    print '##### END TEST ####\n'
+    return "OK"
+
+
 def create_session_for_document(document_id,
                                 box_view_client,
                                 expires_at=None):
