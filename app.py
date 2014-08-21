@@ -71,16 +71,8 @@ def create_session():
 
     if api_response.status_code == 202:
         return jsonify({'status': 'much undone'}), 202
-    else:
-        session = api_response.json()
-        session_url = box_view_client.create_session_url(session['id'])
-        print 'Session is {}'.format(session_url)
 
-        combined_response = {
-            'session_url': session_url,
-            'session': session
-        }
-        return jsonify(combined_response)
+    return jsonify(api_response.json())
 
 
 @app.route('/webhook', methods=['POST', 'GET'])

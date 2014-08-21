@@ -129,18 +129,3 @@ class BoxViewClient(object):
         document = self.get_document(document_id).json()
 
         return document['status']
-
-    @staticmethod
-    def create_session_url(session_id, theme=None):
-        """
-        """
-        if not theme:
-            theme = 'light'
-
-        return '{}{}/{}{}?theme={}'.format(
-            s.VIEW_API_URL,
-            SESSIONS_RESOURCE,
-            session_id,
-            VIEW_RESOURCE,
-            theme
-        )

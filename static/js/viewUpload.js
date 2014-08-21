@@ -38,10 +38,11 @@ function fetchSession(documentID, expire) {
         },
         statusCode: {
             200: function(data) {
+                console.log(data);
                 $('button, #progress').toggle();
-                $('#session-link').text(data.session_url).attr('href', data.session_url).show();
+                $('#session-link').text(data.urls.view).attr('href', data.session_url).show();
                 $('html, body').delay(1000).animate( {scrollTop: $('#session-link').offset().top}, 2000);
-                $('iframe').attr('src', data.session_url).delay(1000).fadeIn('slow');
+                $('iframe').attr('src', data.urls.view).delay(1000).fadeIn('slow');
             },
             202: function() {
                 fetchSession(documentID, expire);
