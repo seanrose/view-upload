@@ -93,15 +93,19 @@ class BoxViewClient(object):
         return response
 
     @raise_for_view_error
-    def create_session(self, document_id, expires_at=None):
+    def create_session(self, document_id, expires_at=None, is_downloadable=None):
         """
         """
 
         resource = '{}{}'.format(self.url, SESSIONS_RESOURCE)
         headers = {'Content-type': 'application/json'}
         data = {'document_id': document_id}
+
         if expires_at:
             data['expires_at'] = expires_at
+        if is_downloadable:
+            data['is_downloadable'] = True
+
         data = json.dumps(data)
 
         response = self.requests.post(resource, headers=headers, data=data)

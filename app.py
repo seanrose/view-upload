@@ -65,7 +65,7 @@ def create_session():
         expires_at = None
 
     try:
-        api_response = box_view_client.create_session(document_id, expires_at)
+        api_response = box_view_client.create_session(document_id, expires_at, True)
     except(BoxViewError):
         return jsonify({'error': 'an error occurred'}), 400
 
