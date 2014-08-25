@@ -40,7 +40,7 @@ function fetchSession(documentID, expire) {
             200: function(data) {
                 console.log(data);
                 $('button, #progress').toggle();
-                $('#session-link').text(data.urls.view).attr('href', data.session_url).show();
+                $('#session-link').text(data.urls.view).attr('href', data.urls.view).show();
                 $('html, body').delay(1000).animate( {scrollTop: $('#session-link').offset().top}, 2000);
                 $('iframe').attr('src', data.urls.view).delay(1000).fadeIn('slow');
             },
